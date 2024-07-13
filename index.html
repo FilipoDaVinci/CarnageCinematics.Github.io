@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarnageCinematics</title>
+    <title>Media Embed</title>
     <style>
         body {
             display: flex;
@@ -12,9 +12,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Anton', sans-serif; /* Change font-family to Anton */
             background-color: #141414;
             color: #ffffff;
+            position: relative; /* Ensure positioning context */
         }
         .container {
             max-width: 800px;
@@ -26,7 +27,7 @@
         }
         nav {
             width: 100%;
-            background-color: #333;
+            background-color: transparent; /* Changed background color to transparent */
             padding: 10px;
             display: flex;
             justify-content: center;
@@ -102,10 +103,25 @@
         #tvFields {
             display: none;
         }
+        /* Styling for the logo */
+        #logo {
+            position: absolute;
+            top: 10px; /* Adjusted top position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        @media (max-width: 600px) {
+            #logo {
+                top: 20px; /* Adjusted top position for smaller screens */
+            }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> <!-- Include Anton font -->
 </head>
 <body>
+    <img id="logo" src="Carn123.png" alt="Carnage Cinematics Logo"> <!-- Replace with the path to your image -->
     <div class="container">
         <nav>
             <a href="#" id="movieLink" class="active" onclick="setMediaType('movie')">Movies</a>
